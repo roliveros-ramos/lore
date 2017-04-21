@@ -1,6 +1,6 @@
 
 dietPlot = function(data, species, FUN=mean, horiz=TRUE,
-                    col=NULL) {
+                    col=NULL, xlab="%IRI", ylab="Species") {
 
   FUN = match.fun(FUN)
 
@@ -26,11 +26,16 @@ dietPlot = function(data, species, FUN=mean, horiz=TRUE,
   spp2 = sprintf("%s\n(n = %d)", colnames(diet), n)
 
   spp = if(isTRUE(horiz)) spp1 else spp2
+
   par(mar=mar, oma=oma)
   barplot(diet, names.arg=spp, col=col, legend = TRUE,
           args.legend = list(bty="n", x=xpos,
                              inset=inset, ncol=ncol, xjust=0.1),
-          horiz=horiz, las=las)
+          horiz=horiz, axes=FALSE)
+
+  axP = if(isTRUE(horiz)) 1 else 2
+  ax = axTicks(axP)
+  axis(axP, at = ax, labels = sprintf("%d%%", ax), las=1)
 
   return(invisible())
 }
