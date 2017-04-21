@@ -1,5 +1,6 @@
 
-dietPlot = function(data, species, FUN=mean, horiz=TRUE) {
+dietPlot = function(data, species, FUN=mean, horiz=TRUE,
+                    col=NULL) {
 
   FUN = match.fun(FUN)
 
@@ -17,6 +18,7 @@ dietPlot = function(data, species, FUN=mean, horiz=TRUE) {
   diet = t(diet)
 
   ncol  = if(isTRUE(horiz)) ceiling(nrow(diet)/2) else 1
+  if(is.null(col)) col = seq(nrow(diet))
 
   # spp = sprintf("italic('%s') (n = %d)", colnames(diet), n)
   # spp = as.expression(spp)
