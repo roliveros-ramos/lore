@@ -1,8 +1,13 @@
 
 dietPlot = function(data, species, FUN=mean, horiz=TRUE,
-                    col=NULL, xlab="%IRI", ylab="Species") {
+                    col=NULL, ylab="%IRI", xlab="Species") {
 
   FUN = match.fun(FUN)
+
+  if(isTRUE(horiz)) {
+    xlab = ylab
+    ylab = NULL
+  }
 
   mar   = if(isTRUE(horiz)) c(6,12,2,2) else c(4,4,2,2)
   xpos  = if(isTRUE(horiz)) "bottom" else "right"
