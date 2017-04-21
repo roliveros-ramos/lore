@@ -31,7 +31,8 @@ dietPlot = function(data, species, FUN=mean, horiz=TRUE,
   barplot(diet, names.arg=spp, col=col, legend = TRUE,
           args.legend = list(bty="n", x=xpos,
                              inset=inset, ncol=ncol, xjust=0.1),
-          horiz=horiz, axes=FALSE)
+          horiz=horiz, axes=FALSE, xlab=xlab, ylab=ylab,
+          las=1)
 
   axP = if(isTRUE(horiz)) 1 else 2
   ax = axTicks(axP)
