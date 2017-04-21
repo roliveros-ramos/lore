@@ -1,0 +1,10 @@
+Package: lore
+Type: Package
+Title: Plot whatever Lorena wants.
+Version: 0.0.1
+Author: Ricardo Oliveros-Ramos
+Maintainer: Ricardo Oliveros-Ramos <ricardo.oliveros@gmail.com>
+Description: Title is already fully explicative.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
