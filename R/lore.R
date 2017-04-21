@@ -9,7 +9,7 @@ dietPlot = function(data, species, FUN=mean, horiz=TRUE,
     ylab = NULL
   }
 
-  mar   = if(isTRUE(horiz)) c(6,12,2,2) else c(4,4,2,2)
+  mar   = if(isTRUE(horiz)) c(6,12,2,2) else c(4,4,2,8)
   xpos  = if(isTRUE(horiz)) "bottom" else "right"
   inset = if(isTRUE(horiz)) -0.6 else -0.4
   las   = if(isTRUE(horiz)) 1 else 1
